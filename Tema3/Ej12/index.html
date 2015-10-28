@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--Ejercicio 12
+Realiza un minicuestionario con 10 preguntas tipo test sobre las asignaturas que se imparten en
+el curso. Cada pregunta acertada sumará un punto. El programa mostrará al final la calificación
+obtenida. Pásale el minicuestionario a tus compañeros y pídeles que lo hagan para ver qué tal andan
+de conocimientos en las diferentes asignaturas del curso.
+-->
+<html>
+<head>
+<title>Ejercicio 12</title>
+<meta charset="UTF-8">
+</head>
+<body>
+	<h2>
+		Introduzca sus respuestas, se evaluaran sus conocimientos :
+	</h2>
+		<form action="ej12.php" method="post">
+			<ul>
+				<li>1. En HTML, la forma correcta de crear un comentario es: <br>
+					<input type="radio" name="r[1]" value="1">a)&lt;--! El
+					comentario !--&gt; <br> <input type="radio" name="r[1]"
+					value="2">b)&lt;--! El comentario --&gt; <br> <input
+					type="radio" name="r[1]" value="3">c)&lt;!-- El comentario
+					--&gt;<br> <input type="hidden" name="resultado" value="">
+				</li>
+				<li>2. En PHP, ¿cómo se obtiene la información de un formulario
+					que ha sido enviado mediante el método "get"? <br> <input
+					type="radio" name="r[2]" value="1">a) $_URL[] <br> <input
+					type="radio" name="r[2]" value="2">b) $_GET[] <br> <input
+					type="radio" name="r[2]" value="3">c) $_FORM[]<br>
+				</li>
+				<li>3. En MySQL, para mostrar la estructura de una tabla se
+					emplea el comando <br> <input type="radio" name="r[3]"
+					value="1">a) DESC<br> <input type="radio" name="r[3]"
+					value="2">b) SHOW COLUMNS FROM<br> <input type="radio"
+					name="r[3]" value="3">c) DESCRIBE <br> <input
+					type="hidden" name="resultado" value="">
+				</li>
+				<li>4. En PHP, ¿cuál es el carácter que se emplea para
+					finalizar una instrucción?<br> <input type="radio" name="r[4]"
+					value="1">a) .<br> <input type="radio" name="r[4]"
+					value="2">b) $<br> <input type="radio" name="r[4]"
+					value="3">c) ;<br> <input type="hidden"
+					name="resultado" value="">
+				</li>
+				<li>5. En HTML, el atributo title se emplea para<br> <input
+					type="radio" name="r[5]" value="1">a) Definir el nombre de
+					un elemento <br> <input type="radio" name="r[5]" value="2">b)
+					Definir el título de la página <br> <input type="radio"
+					name="r[5]" value="3">c) Las anteriores respuestas no son
+					correctas <br> <input type="hidden" name="resultado" value="">
+				</li>
+				<li>6. En PHP, todas las variables comienzan con el símbolo <br>
+					<input type="radio" name="r[6]" value="1">a) &<br> <input
+					type="radio" name="r[6]" value="2">b) €<br> <input
+					type="radio" name="r[6]" value="3">c) $<br> <input
+					type="hidden" name="resultado" value="">
+				</li>
+				<li>7. En JavaScript, el operador para concatenar cadenas es: <br>
+					<input type="radio" name="r[7]" value="1">a) &<br> <input
+					type="radio" name="r[7]" value="2">b) +<br> <input
+					type="radio" name="r[7]" value="3">c) .<br> <input
+					type="hidden" name="resultado" value="">
+				</li>
+				<li>8. Cuando se emplea el método "post" de envío de un
+					formulario, ¿los datos del formulario se muestran en la URL? <br>
+					<input type="radio" name="r[8]" value="1">a) Siempre <br>
+					<input type="radio" name="r[8]" value="2">b) Sí, si así se
+					ha indicado en el formulario <br> <input type="radio"
+					name="r[8]" value="3">c) Nunca <br> <input
+					type="hidden" name="resultado" value="">
+				</li>
+				<li>9. ¿Qué significa CSS? <br> <input type="radio"
+					name="r[9]" value="1">a) Computer Style Sheets <br> <input
+					type="radio" name="r[9]" value="2">b) Creative Style Sheets
+					<br> <input type="radio" name="r[9]" value="3">c)
+					Cascading Style Sheets <br> <input type="hidden"
+					name="resultado" value="">
+				</li>
+				<li>10. Cuando se fundó el W3C <br> <input type="radio"
+					name="r[10]" value="1">a) 1989 <br> <input
+					type="radio" name="r[10]" value="2">b) 1991 <br> <input
+					type="radio" name="r[10]" value="3">c) 1994 <br> <input
+					type="hidden" name="resultado" value="">
+				</li>
+			</ul>
+			<input type="submit" value="Aceptar">
+		</form>
+</body>
+</html>
