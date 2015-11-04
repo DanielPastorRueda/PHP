@@ -10,53 +10,61 @@
  * sesiones
  */
 
+/** control-log EJ4*/
 
-if (! isset ( $_REQUEST ['number'] ))
+if($_SESSION['logeado'] == false)
 {
-	// $_creo variables de session:
-	$_SESSION ['suma'] = 0;
-	$_SESSION ['contador'] = 0;
-	$num = 0;
-
-	myForm ();
-} elseif ($_REQUEST ['number'] > 0) // he recibido el form:
-{
-	$num = $_REQUEST ['number'];
-	$_SESSION ['suma'] += $num;
-	$_SESSION ['contador'] ++;
-
-	myForm ();
-
-	echo "<br>";
-	echo "La suma es:" . $_SESSION ['suma'];
-	echo "<br>";
-	echo "Contador (Session): " . $_SESSION ['contador'];
-	echo "<br>";
-	echo "Contador (variable): " . $contador;
-} else // ($num < 0)
-{
-	$media = ($_SESSION ['suma'] / $_SESSION ['contador']);
-	echo "<br>";
-	echo "Media = " . $media;
+    echo "No estás logueado, acceda al ejercicio 4 para iniciar session";
 }
+else
+{
+
+    if (! isset ( $_REQUEST ['number'] ))
+    {
+            // $_creo variables de session:
+            $_SESSION ['suma'] = 0;
+            $_SESSION ['contador'] = 0;
+            $num = 0;
+
+            myForm ();
+    } elseif ($_REQUEST ['number'] > 0) // he recibido el form:
+    {
+            $num = $_REQUEST ['number'];
+            $_SESSION ['suma'] += $num;
+            $_SESSION ['contador'] ++;
+
+            myForm ();
+
+//            echo "<br>";
+//            echo "La suma es:" . $_SESSION ['suma'];
+//            echo "<br>";
+//            echo "Contador (Session): " . $_SESSION ['contador'];
+//            echo "<br>";
+//            echo "Contador (variable): " . $contador;
+    } else // ($num < 0)
+    {
+            $media = ($_SESSION ['suma'] / $_SESSION ['contador']);
+            echo "<br>";
+            echo "Media = " . $media;
+    }
+}    
 function myForm()
 {
-	/* -- VARIABLES PARA RUTAS AUTOMATICAS ------------------------------------ */
-	$nombrePag = $_SERVER ['SCRIPT_NAME'];
-	$ruta = $_SERVER ['REQUEST_URI'];
-	$pos = strpos ( $ruta, 'ejercicio=' );
-	$numEj = substr ( $ruta, ($pos + 10), 2 );
-	/* -- ---- cabecera ------------------------------------------------------- */
-	?>
+/* -- VARIABLES PARA RUTAS AUTOMATICAS ------------------------------------ */
+	$nombrePag = $_SERVER ['SCRIPT_NAME'];	$ruta = $_SERVER ['REQUEST_URI'];
+	$pos=strpos($ruta, 'ejercicio=' );	$numEj = substr ( $ruta, ($pos + 10), 2 );
+/* -- ---- cabecera ------------------------------------------------------- */
+?>
 <form action="<?= $nombrePag ?>" method="get">
 	<input type="hidden" name="ejercicio" value="<?= $numEj ?>">
-	<!-- CAMPOS DEL FORM ------------------------------------------------------>
+<!-- CAMPOS DEL FORM ------------------------------------------------------>
 
 	<input type="number" name="number" autofocus="autofocus"><br>
 
-	<!-- ---------------------------------------------------------------------->
+<!-- ---------------------------------------------------------------------->
 	<input type="submit" value="Aceptar">
-</form><?php
+</form>
+<?php
 }
 
 
