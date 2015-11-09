@@ -23,15 +23,17 @@ if (! isset ( $_REQUEST['texto'] ))
 } elseif(  ($_REQUEST['texto'] == $_SESSION['user']) 
 		 &&($_REQUEST['pass']  == $_SESSION['pass']) )
 {
+	$_SESSION['logeado'] = true;
     
 	echo "<br>";
 	echo "Bienvenido " . ucwords($_SESSION['user']);
-	$_SESSION['logeado'] = true;
-        
+?>
+	<h3>Bienvenido "<?= ucwords($_SESSION['user'])?></h3>
+<?php       
 	//sleep(5);
-	header('Location: pagina.php?ejercicio=01');
-
-
+	
+	//header('Location: pagina.php?ejercicio=01');
+	
 
 
 }
@@ -39,7 +41,10 @@ else // datos incorrectos
 {
 
 	echo "<br>";
-	echo "Datos incorrectos, Introduzca nuevamente para acceder: ";
+	?>
+		<h2 style="color: red">No estás logueado, acceda al ejercicio 4 para iniciar session</h2>
+	<?php
+
 	
 	formUserPass();
 	

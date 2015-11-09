@@ -1,10 +1,29 @@
 <?php session_start(); ?>
 <style>
+    section{
+    margin: 20px; 
+    padding: 20px; 
+    }    
 form {
     position: relative;
     float: left;
     display: inline;
     padding: 18px;
+}
+
+#carrito
+{
+    position:relative; 
+    float:right; 
+    width: 12%;
+    height: 800px;
+}
+#productos
+{
+    position:relative; 
+    /*left: -90px;*/
+    width: 75%;
+    height: 800px;
 }
 </style>
 
@@ -15,16 +34,16 @@ De cada producto se debe conocer al menos la descripción, el precio y debe tene
  */
     
 $productos = array (
-    "dron" => array ( "descripcion" => "Octocopter DJI s1000",  "precio" => "2.849,99 €", "imagen" => "droneA.jpg",),   
-    "coche" => array ( "descripcion" => "RTR SAVAGE XL OCTANO",  "precio" => "1.186,99 €", "imagen" => "cocheB.jpg",),   
-    "barco" => array ( "descripcion" => "Barco anfibio Siglo",  "precio" => "1.525,99 €", "imagen" => "barcoC.jpg",),   
-    "gafas" => array ( "descripcion" => "FatShark Dominator V2",  "precio" => "545.99 €", "imagen" => "gafasD.jpg",)
+    "dron" => array ( "descripcion" => "Octocopter DJI s1000",  "precio" => "2849.99", "imagen" => "droneA.jpg",),   
+    "coche" => array ( "descripcion" => "RTR SAVAGE XL OCTANO",  "precio" => "1186.99", "imagen" => "cocheB.jpg",),   
+    "barco" => array ( "descripcion" => "Barco anfibio Siglo",  "precio" => "1525.99", "imagen" => "barcoC.jpg",),   
+    "gafas" => array ( "descripcion" => "FatShark Dominator V2",  "precio" => "545.99", "imagen" => "gafasD.jpg",)
 );
 
 
 if((!isset($_REQUEST['comprar'])) && count($_SESSION['carrito']) == 0 )//or (!isset($_REQUEST['eliminar'])) )//|| count($_SESSION['carrito']) == 0 )
 {
-    ?><section><?php
+    ?><section id="productos"><?php    
 	echo"<h2>Nuestro catálogo de productos:</h2>";
 	mostrarProductos($productos);
     ?></section><?php 
@@ -47,21 +66,21 @@ else
         {
             if($_REQUEST['eliminar'] == $key)
             {
-                echo "elimino articulo";
+                //echo "elimino articulo";
                 unset($_SESSION['carrito'][$key]);
             }
         }
     }
     
-    //? ><article style=" position: relative; display: block; width: 20%; height:100%">< ?php
-    ?><section style="position: relative; top:0; right: 0; float:right; width:200px;"><?php        
+    //? ><article style=" position: relative; display: block; width: 20%; height:100% relative; /* top:0; */ /* right: 0; */">< ?php
+    ?><section id="carrito"><?php        
         echo"<h2>Carrito de compra:</h2>";
 	$total = mostrarCarrito($_SESSION['carrito']);
         echo"<h3>Total: $total € </h3>";
     ?></section><?php
-            
-   // ? ><article style=" position:absolute; width:60%; height:100%; ">< ?php
-   ?><section style="position: relative; top:0; right: 0; float:left; width:800px;"><?php        
+    
+   // ? ><article style=" position:absolute; width:60%; height:100%; position: relative; /* top:0; */ /* right: 0; */ ">< ?php
+        ?><section id="productos"><?php        
         echo"<h2>Gracias por su compra!, ¿Desea comprar algo mas?:</h2>";
         mostrarProductos($productos);
         
@@ -85,7 +104,7 @@ function mostrarProductos($productos)
             <div>
                 <img src="../img/<?= $prod[imagen] ?>" height="230" width="230">
                 <div style="font-size: 15px; color: #222B00"><?= $prod[descripcion] ?></div>
-                <div style="font-size: 20px; font-weight: bold; color: #88AA00"><?= $prod[precio] ?>
+                <div style="font-size: 20px; font-weight: bold; color: #88AA00"><?= $prod[precio] ?>€
                     <span style="position: relative; left: 25px; top: -2px;">
                         <input type="hidden" value="<?= $key ?>" name="comprar">
                         <input type="submit" value="Lo quiero">
@@ -116,7 +135,7 @@ function mostrarCarrito($productos)
         <div>
             <img src="../img/<?= $prod[imagen] ?>" height="100" width="100">
             <div style="font-size: 10px; color: #222B00"><?= $prod[descripcion] ?></div>
-            <div style="font-size: 15px; font-weight: bold; color: #88AA00"><?= $prod[precio] ?>
+            <div style="font-size: 15px; font-weight: bold; color: #88AA00"><?= $prod[precio] ?>€
                 <span style="position: relative; left: 4px; top: -2px;">
                         <input type="hidden" value="<?= $key ?>" name="eliminar">
                         <input type="submit" value="Quitar">

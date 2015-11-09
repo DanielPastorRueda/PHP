@@ -40,6 +40,13 @@ header img {
 	margin-left: 105px;
 	top: -146px;
 }
+#log {
+    color: white;
+    float: right;
+    position: absolute;
+    top: 73px;
+    left: 1300px;
+}
 /*----------------Fin Header-----------------------*/
 
 /*----------------Cuerpo General-------------------*/
@@ -82,6 +89,12 @@ table, th, tr, td {
 }
 
 /*---------------Fin Cuerpo General----------------*/
+
+.volver{
+	clear: both;
+	display: block;
+	position: relative;
+}
 
 /*---------------Seccion y Articulos----------------*/
 section {

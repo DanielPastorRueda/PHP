@@ -19,10 +19,10 @@ if (! isset ( $_REQUEST ['number'] ))
 	
 	myForm();
 } 
-elseif ($_REQUEST ['number'] > 0) // he recibido el form:
+elseif ($_REQUEST['number'] > 0) // he recibido el form:
 {
 	$num = $_REQUEST ['number'];
-	($_REQUEST['number']%2 ==0) ? ($_SESSION['arrayPar'][]=$num) : ($_SESSION['arrayImpar'][]=$num);
+	($_REQUEST['number']%2 == 0) ? ($_SESSION['arrayPar'][]=$num) : ($_SESSION['arrayImpar'][]=$num);
 	
 	
 	

@@ -14,7 +14,11 @@
 
 if($_SESSION['logeado'] == false)
 {
-    echo "No estás logueado, acceda al ejercicio 4 para iniciar session";
+?>
+    	<h2 style="color: red">No estás logueado, acceda al ejercicio 4 para iniciar session</h2>
+    	<h3>Inicie session:</h3>
+<?php
+			include '04.php';
 }
 else
 {

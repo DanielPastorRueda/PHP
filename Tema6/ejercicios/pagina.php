@@ -10,23 +10,31 @@
 <meta name="keywords" content="PHP practicas, ejemplos PHP">
 <meta name="author" content="Daniel Pastor">
 </HEAD>
+
 <body>
 <!-- comienzo header-->
 	<HEADER>
 		<h1>APRENDIENDO PHP CON EJERCICIOS</h1>
 		<H2>TEMA 6</H2>
 		<img src="..\img\logo.svg" alt="logo">
-
+<?php
+    if($_SESSION['logeado'])
+    {
+    ?>
+                <span id="log">Bienvenido : <?= ucwords($_SESSION['user'])?></span>
+    <?php 
+    }
+?>
 	</HEADER>
 <!-- fin header-->
 	<section>
         <?php
 			include $_GET ['ejercicio'] . '.php';
-		?>
+	?>
 	</section>
 
 	<br>
-	<a href="..\index.html">Volver al listado</a>
+	<a href="..\index.html" class="volver">Volver al listado</a>
 	<br>
 	
 <!-- comienzo footer-->
