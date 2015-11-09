@@ -1,7 +1,6 @@
 <?php
 
-    /*
-      Daniel Pastor Rueda.
+/* Daniel Pastor Rueda. Ejercicio 09
 
 Amplía el ejercicio 6 de tal forma que los productos que se
 pueden elegir para comprar se almacenen en cookies. La aplicación
