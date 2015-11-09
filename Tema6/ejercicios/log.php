@@ -4,19 +4,11 @@
 /** Daniel Pastor Rueda.
     control de log generico:
  */
+//Cargo los datos de acceso a session, tb podría realizarse a una BBDD
     
-//if(! isset( $_REQUEST['texto'] ))
-//{
-	// creo variables de session para user/pass: o accedo a una BBDD
 	$_SESSION['user'] = "dani";
 	$_SESSION['pass'] = "1234";
 	$_SESSION['logeado'] = false;
-
-	//formUserPass(); 
-//        
-//        
-//        
-//} 
 
 if(!(isset($_REQUEST['iduser'])))
 {
@@ -32,21 +24,12 @@ elseif(($_REQUEST['iduser'] == $_SESSION['user']) &&($_REQUEST['idpass']  == $_S
     
     echo 'truuuuuee';
     //sleep(5);
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
-    
-//    $nombrePag = $_SERVER ['SCRIPT_NAME'];	
-//    $ruta = $_SERVER ['REQUEST_URI'];
-//    $pos=strpos($ruta, 'ejercicio=' );	
-//    $numEj = substr ( $ruta, ($pos + 10), 2 );
+    header('Location: ' . $_SERVER['HTTP_REFERER']);    //redirige a la pagina ANTERIOR
     
     
-    
-    //header('Location:' .$_getenv('HTTP_REFERER'));
-    
-    //pagina.php?ejercicio=06&comprar=barco (PREGUNTAR!!!)
+    //header('Location: pagina.php?ejercicio=06');  //
+    //pagina.php?ejercicio=06&comprar=barco 
     //sleep(5);
-	
-    //header('Location: pagina.php?ejercicio=01');
     
     
 }

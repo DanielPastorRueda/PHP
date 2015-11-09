@@ -22,7 +22,8 @@
 	<section>
         <h2> Detalles del producto:</h2>
 <?php
-//en este caso sin bbdd, cargamos nuestra variable array aqui mismo:
+//en este caso sin bbdd, cargamos nuestra variable array aqui mismo, 
+//no puedo tirar de una session, ya que la vista de detalle incluye tambien a mis productos de tienda
 $productos = array (
 		"dron" => array ( "descripcion" => "Octocopter DJI s1000",  "precio" => "2849.99", "imagen" => "droneA.jpg",),
 		"coche" => array ( "descripcion" => "RTR SAVAGE XL OCTANO",  "precio" => "1186.99", "imagen" => "cocheB.jpg",),
@@ -30,24 +31,22 @@ $productos = array (
 		"gafas" => array ( "descripcion" => "FatShark Dominator V2",  "precio" => "545.99", "imagen" => "gafasD.jpg",)
 );
 
-$producto= $_REQUEST['key'];
+//$producto= $_REQUEST['key'];
 
         foreach ($productos as $key => $prod)
         {
         	if($_REQUEST['key'] == $key)
         	{
+//En este Form, meto la direccion manualmente, es mas fácil:
 ?>                              
-<!--/////////////
-?>
-<form class="articulos" action="<?= $nombrePag ?>" method="get">  
-       <input type="hidden" name="ejercicio" value="<?= $numEj ?>">
-     CAMPOS DEL FORM ----------------------------------------------------
+<form class="articulos" action="pagina.php" method="get">  
+       <input type="hidden" name="ejercicio" value="06">
             <div>
                 <a href="06_productos.php?key=<?=$key?>">
-                    <img href="pagina" src="../img/<?= $prod[imagen] ?>" height="230" width="230">
+                    <img href="pagina" src="../img/<?= $prod['imagen'] ?>" height="400" width="400">
                 </a>
-                <div style="font-size: 15px; color: #222B00"><?= $prod[descripcion] ?></div>
-                <div style="font-size: 20px; font-weight: bold; color: #88AA00"><?= $prod[precio] ?>â‚¬
+                <div style="font-size: 15px; color: #222B00"><?= $prod['descripcion'] ?></div>
+                <div style="font-size: 20px; font-weight: bold; color: #88AA00"><?= $prod['precio'] ?>€
                     <span style="position: relative; left: 25px; top: -2px;">
                         <input type="hidden" value="<?= $key ?>" name="comprar">
                         <input type="submit" value="Lo quiero">
@@ -55,17 +54,10 @@ $producto= $_REQUEST['key'];
                 </div> 
             </div>
     </form>
-///////////////-->
-                                <img src="../img/<?= $prod['imagen'] ?>" height="400" width="400">
-				<h3>ID Articulo : <?= $key ?></h3>
-				<h3>Descripción : <?= $prod['descripcion'] ?></h3>
-				<h3>Precio : <?= $prod['precio'] ?></h3>
+
 <?php
         	}
         }
-        
-        
-	//	include $_GET['$key'] . '.php';
 ?>
 	</section>
 
