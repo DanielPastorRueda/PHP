@@ -20,16 +20,16 @@ traducción al castellano. Las palabras deben estar distribuidas en dos columnas
           </thead>
           <tbody>
           <?php
-										for($cont = 1; $cont < 11; $cont ++)
-										{
-											?>
+for($cont = 1; $cont < 11; $cont ++)
+{
+?>
               <tr>
                   <td>colA<?= $cont ?></td>
                   <td>colB<?= $cont ?></td>
               </tr>
           <?php
-										}
-										?>
+}
+?>
           </tbody>
       </table>
       -->

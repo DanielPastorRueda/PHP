@@ -29,9 +29,23 @@ elseif(($_REQUEST['iduser'] == $_SESSION['user']) &&($_REQUEST['idpass']  == $_S
     
     //header('Location: pagina.php?ejercicio=06');  //
     //pagina.php?ejercicio=06&comprar=barco 
-    //sleep(5);
+
+    
+    // $_SESSION['pagina'] = "pagina.php?ejercicio=06_comprar";
+    // header('Location: pagina.php?ejercicio=06');  //
     
     
+////hacia varias paginas (con una intermedia) se hace así: ///////////////////////////////////////////////////
+    
+//    //Estoy en la "pagina a"
+//    $_SESSION['pagina']= "c.php";   //guardo en session la ruta de C.php
+//    header('Location: b.php' );     //dirijo hacia la B (intermedia)
+//    
+//    //Estoy en la pagina b              
+//        //realizo las acciones que desee... 
+//    header('Location:' .$_SESSION['pagina'] );  //redirige a la pagina C tras hacer las acciones en la B
+    
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////   
 }
 else{
 print_r(get_defined_vars());

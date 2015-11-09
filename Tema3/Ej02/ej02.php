@@ -10,25 +10,25 @@ respectivamente. Sólo se tienen en cuenta las horas, los minutos no se deben in
 <title>Ejercicio 2</title>
 </head>
 <body>
-        <?php
-								$hora = $_REQUEST ['hora'];
-								
-								if (($hora > 0) && ($hora < 24))
-								{
-									if (($hora > 5) && ($hora < 13)) // de 6 a 12
-									{
-										echo "Buenos días";
-									} else if (($hora > 12) && ($hora < 21)) // de 13 a 20
-									{
-										echo "Buenas tardes";
-									} else
-									{
-										echo "Buenas noches";
-									}
-								} else
-								{
-									echo "Introduzca la hora nuevamente (sale de los parametros de 01 a 23).";
-								}
-								?> 
+<?php
+$hora = $_REQUEST ['hora'];
+
+if (($hora > 0) && ($hora < 24))
+{
+    if (($hora > 5) && ($hora < 13)) // de 6 a 12
+    {
+            echo "Buenos días";
+    } else if (($hora > 12) && ($hora < 21)) // de 13 a 20
+    {
+            echo "Buenas tardes";
+    } else
+    {
+            echo "Buenas noches";
+    }
+} else
+{
+    echo "Introduzca la hora nuevamente (sale de los parametros de 01 a 23).";
+}
+?> 
 </body>
 </html>
