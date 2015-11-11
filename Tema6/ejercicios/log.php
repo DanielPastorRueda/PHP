@@ -1,15 +1,18 @@
 <?php session_start(); ?>
+<style>
+
+</style>
 <?php
 
 /** Daniel Pastor Rueda.
     control de log generico:
- */
+*/
 //Cargo los datos de acceso a session, tb podría realizarse a una BBDD
-    
 	$_SESSION['user'] = "dani";
 	$_SESSION['pass'] = "1234";
 	$_SESSION['logeado'] = false;
-
+	
+////////////////////////////////////////////////////////////////////////	
 if(!(isset($_REQUEST['iduser'])))
 {
 ?>
@@ -21,31 +24,8 @@ if(!(isset($_REQUEST['iduser'])))
 elseif(($_REQUEST['iduser'] == $_SESSION['user']) &&($_REQUEST['idpass']  == $_SESSION['pass']))
 {
     $_SESSION['logeado']=true;
-    
-    echo 'truuuuuee';
-    //sleep(5);
     header('Location: ' . $_SERVER['HTTP_REFERER']);    //redirige a la pagina ANTERIOR
-    
-    
-    //header('Location: pagina.php?ejercicio=06');  //
-    //pagina.php?ejercicio=06&comprar=barco 
 
-    
-    // $_SESSION['pagina'] = "pagina.php?ejercicio=06_comprar";
-    // header('Location: pagina.php?ejercicio=06');  //
-    
-    
-////hacia varias paginas (con una intermedia) se hace así: ///////////////////////////////////////////////////
-    
-//    //Estoy en la "pagina a"
-//    $_SESSION['pagina']= "c.php";   //guardo en session la ruta de C.php
-//    header('Location: b.php' );     //dirijo hacia la B (intermedia)
-//    
-//    //Estoy en la pagina b              
-//        //realizo las acciones que desee... 
-//    header('Location:' .$_SESSION['pagina'] );  //redirige a la pagina C tras hacer las acciones en la B
-    
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////   
 }
 else{
 print_r(get_defined_vars());
@@ -63,11 +43,6 @@ if($_SESSION['logeado'])
     <span id="log">Bienvenido : <?= ucwords($_SESSION['user'])?></span>  
 <?php
 }    
-
-	
-    
-
-	
 
 
 
@@ -91,5 +66,32 @@ function formUserPass()
 <?php
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// NOTAS
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
-?>    
+//desde [pagina.php]+[ejercicio _*.php]+[&articulo($key)]
+//<a href="pagina.php?ejercicio=<?= $numEj ? >_productos&key=<?=$key? >">
+
+
+//header('Location: pagina.php?ejercicio=06');  //
+//pagina.php?ejercicio=06&comprar=barco
+//$_SESSION['pagina'] = "pagina.php?ejercicio=06_comprar";
+// header('Location: pagina.php?ejercicio=06');  //
+
+
+
+////hacia varias paginas (con una intermedia) se hace así: ///////////////////////////////////////////////////
+//
+//    //Estoy en la ---pagina A----
+//    	$_SESSION['pagina']= "c.php";   				//1. guardo en session la ruta de C.php
+//    	header('Location: b.php' );     				//2. dirijo hacia la B (intermedia)
+//
+//    //Estoy en la ---pagina B----
+//
+//        //realizo las acciones que desee...
+//
+//    	header('Location:' .$_SESSION['pagina'] );  	//3. redirige a la pagina C tras hacer las acciones en la B
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+

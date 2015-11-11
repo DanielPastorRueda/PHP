@@ -24,14 +24,10 @@ section{
     position:relative; 
     float:right; 
     width: 12%;
-/*    height: 800px;*/
 }
 #productos
 {
     position:relative; 
-    /*left: -90px;*/
-/*    width: 75%;
-    height: 800px;*/
 }
 </style>
 

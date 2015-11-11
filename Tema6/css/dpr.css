@@ -35,17 +35,18 @@ header h2 {
 }
 
 header img {
-	height: 119px;
-	position: relative;
-	margin-left: 105px;
-	top: -146px;
+    height: 120px;
+    width: 120px;
+    position: relative;
+    left: 35px;
+    top: -150px;
 }
 #log {
-    color: white;
+    color: #FFFFFF;
     float: right;
-    position: absolute;
-    top: 73px;
-    left: 1300px;
+    position: relative;
+    top: -80px;
+    left: -34px;
 }
 /*----------------Fin Header-----------------------*/
 
@@ -91,47 +92,35 @@ table, th, tr, td {
 /*---------------Fin Cuerpo General----------------*/
 
 .volver{
-	clear: both;
-	display: block;
-	position: relative;
+    clear: both;
+    display: block;
+    position: relative;
+    top: 50px;
+    left: 10px;
+    color: rgba(233, 30, 99, 0.81);
+    /* margin-top: 10px; */
+    margin-bottom: 29px;
 }
 
 /*---------------Seccion y Articulos----------------*/
 section {
 	box-shadow: 0 1.25rem 2.5rem black;
 	background-color: white;
-	margin: 4%;
-	padding: 5%;
+	position: relative;
+/*     top: 25px; */
 	text-align: center;
+/*  margin: 4%; */
+/* 	padding: 5%; */
+/* 	text-align: center; */
+/* 	margin: 0 auto; */
 }
 
-article {
-	margin: 50px;
-	background-color: #D1D1D1;
-}
-
-article h4 {
-	color: #222B00;
-	font-size: x-large;
-	margin: 10px;
-	background-color: #88AA00;
-}
 /*---------------Fin Articulos----------------*/
 
-/*
-aside
-{
-    position: relative;
-    width: 30%;
-    float: left;
-    background: #0099ff;
-    display: table; 
-    display: block;
-}*/
 footer {
 	clear: both;
 	color: rgb(47, 49, 43);
-	text-align: center; //
+	text-align: center;
 	border-top: 1em #070D18 solid;
 	border-bottom: 10px #222B00 solid;
 	background: #88AA00;

@@ -28,9 +28,9 @@
 	</HEADER>
 <!-- fin header-->
 	<section>
-        <?php
-			include $_GET ['ejercicio'] . '.php';
-	?>
+<?php
+	include $_REQUEST['ejercicio'] . '.php';
+?>
 	</section>
 
 	<br>
